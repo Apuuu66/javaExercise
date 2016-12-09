@@ -1,0 +1,45 @@
+public class Exercise9_1International {
+  public static void main(String[] args) {
+    // Prompt the user to enter a string
+    java.util.Scanner input = new java.util.Scanner(System.in);
+    System.out.print("Enter a string: ");
+    String s = input.nextLine();
+
+    if (isPalindrome(s)) {
+      System.out.println(s + " is a palindrome");
+    }
+    else {
+      System.out.println(s + " is not a palindrome");
+    }
+  }
+
+  /** Check if a string is a palindrome */
+  public static boolean isPalindrome(String s) {
+    String newString = reverse(s);
+
+    return newString.equals(s);
+  }
+
+  /** Reverse a string */
+  public static String reverse(String s) {
+    String newString = new String();
+
+    for (int i = 0; i < s.length(); i++) {
+      newString += s.charAt(s.length() - 1 - i);
+
+    }
+    return newString;
+  }
+
+  /* Alternative better solution
+     public static String reverse(String s) {
+    char[] chars = new char[s.length()];
+
+    for (int i = 0; i < chars.length; i++) {
+      chars[i] = s.charAt(s.length() - 1 - i);
+    }
+
+    return new String(chars);
+     }
+   */
+}
